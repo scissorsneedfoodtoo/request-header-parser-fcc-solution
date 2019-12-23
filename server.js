@@ -5,6 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
+const portNum = process.env.PORT || 3000;
 
 // allow Cross Origin requests, for testing
 app.use(cors());
@@ -31,8 +32,8 @@ app.use(function(req, res, next) {
     .send('Not Found');
 })
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log(`Listening on port ${process.env.PORT}`);
+app.listen(portNum, function () {
+  console.log(`Listening on port ${portNum}`);
 });
 
 module.exports = app; // for testing
